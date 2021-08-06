@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- прослушиваем созданный в компоненте addContact метод, и регистрируем тут, добавляя его в массив контактов -->
     <contactsList :contacts="contacts" />
     <addContact @addContact="addContact"/>
   </div>

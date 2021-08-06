@@ -6,7 +6,6 @@
         v-for="(item, index) in contacts"
         :key="index"
         :item="item"
-        @editName="editName"
       />
     </ul>
   </div>
@@ -23,9 +22,6 @@ export default {
   },
 
   methods: {
-    editName(editedName) {
-      this.item.name=editedName;
-    }
   },
 };
 </script>
