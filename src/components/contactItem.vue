@@ -112,7 +112,7 @@ p {
 }
 
 input {
-  width: 300px;
+  max-width: 300px;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid blueviolet;
@@ -140,5 +140,21 @@ button:hover {
 
 button:active {
   box-shadow: none;
+}
+
+@media (max-width:768px) {
+  .edit {
+    grid-template-columns: 1fr;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  input {
+    max-width: 250px;
+  }
+
+  button {
+    max-width: 272px;
+  }
 }
 </style>

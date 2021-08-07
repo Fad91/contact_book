@@ -62,9 +62,7 @@ export default {
 };
 </script>
 
-
-<style scoped>
-
+<style lang="css" scoped>
 button {
   width: 322px;
   padding: 10px;
@@ -86,7 +84,7 @@ button:active {
 
 .submit-button {
   margin: 0 auto;
-  width: 400px;
+  max-width: 400px;
 }
 
 fieldset {
@@ -100,9 +98,10 @@ fieldset {
 
 input {
   width: 190px;
-
-  @media (max-width: 768px) {
-    width: 100px;
+}
+@media (max-width: 768px) {
+  fieldset {
+    grid-template-columns: 1fr;
   }
 }
 
