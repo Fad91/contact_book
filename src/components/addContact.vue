@@ -63,7 +63,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 
 button {
   width: 322px;
@@ -100,6 +100,10 @@ fieldset {
 
 input {
   width: 190px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+  }
 }
 
 label {
