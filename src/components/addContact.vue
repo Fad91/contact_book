@@ -1,23 +1,29 @@
 <template>
   <form @submit.prevent="addContact">
-    <button class="add-button" type="button" @click="show=true">+</button>
+    <button class="add-button" type="button" @click="show = true">+</button>
     <div v-show="show">
-    <h2>Добавить контакт</h2>
-    <fieldset>
-    <label for="name">Имя
-    <input type="text" name="name" id="name" v-model="name" />
-    </label>
-    <label for="tel">Телефон
-    <input type="tel" name="tel" id="tel" v-model="tel" />
-    </label>
-    <label for="content">Должность
-    <input type="text" name="position" id="position" v-model="position" />
-    </label>
-    <label for="content">Описание
-    <input type="text" name="content" id="content" v-model="content" />
-    </label>
-    </fieldset>
-    <button class="submit-button" type="submit" @click="show=false">Добавить</button>
+      <h2>Добавить контакт</h2>
+      <fieldset>
+        <label for="name"
+          >Имя
+          <input type="text" name="name" id="name" v-model="name" />
+        </label>
+        <label for="tel"
+          >Телефон
+          <input type="tel" name="tel" id="tel" v-model="tel" />
+        </label>
+        <label for="content"
+          >Должность
+          <input type="text" name="position" id="position" v-model="position" />
+        </label>
+        <label for="content"
+          >Описание
+          <input type="text" name="content" id="content" v-model="content" />
+        </label>
+      </fieldset>
+      <button class="submit-button" type="submit" @click="show = false">
+        Добавить
+      </button>
     </div>
   </form>
 </template>
@@ -31,21 +37,20 @@ export default {
       tel: "",
       content: "",
       position: "",
-      editDate: ""
+      editDate: "",
     };
   },
 
   props: ["contacts"],
 
   methods: {
-    // Создаем метод добавления новой записи, и передаем с помощью эмит в родительский компонент.
     addContact() {
       const newItem = {
         name: this.name,
         tel: this.tel,
         content: this.content,
         position: this.position,
-        createDate: new Date()
+        createDate: new Date(),
       };
       this.$emit("addContact", newItem);
       this.name = "";
@@ -56,6 +61,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 
@@ -84,16 +90,16 @@ button:active {
 }
 
 fieldset {
- display: grid;
- grid-template-columns: repeat(2,1fr);
- text-align: left;
- grid-gap: 20px;
- padding: 20px 10px 20px 10px;
- margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: left;
+  grid-gap: 20px;
+  padding: 20px 10px 20px 10px;
+  margin-bottom: 20px;
 }
 
 input {
-  width: 200px;
+  width: 190px;
 }
 
 label {
